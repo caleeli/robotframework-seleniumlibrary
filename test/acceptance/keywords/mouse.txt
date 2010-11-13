@@ -1,0 +1,38 @@
+*Setting*
+Resource  ../resource.txt
+Test Setup  Go To  ${ROOT}/mouse/index.html
+Default Tags  mouse
+
+
+*Test Cases*
+Simulate Mouse Over
+  [Documentation]  FAIL ERROR: Element not_there not found
+  Simulate Mouse Over  test_element
+  Textfield Value Should Be  test_element  mouseover test_element
+  Textfield Value Should Be  secondary_element  ${EMPTY}
+  
+  Simulate Mouse Over  not_there
+
+Simulate Mouse Out
+  [Documentation]  FAIL ERROR: Element not_there not found
+  Simulate Mouse Out  test_element
+  Textfield Value Should Be  test_element  mouseout test_element
+  Textfield Value Should Be  secondary_element  ${EMPTY}
+  
+  Simulate Mouse Out  not_there
+  
+Simulate Mouse Down
+  [Documentation]  FAIL ERROR: Element not_there not found
+  Simulate Mouse Down  test_element
+  Textfield Value Should Be  test_element  mousedown test_element
+  Textfield Value Should Be  secondary_element  ${EMPTY}
+  
+  Simulate Mouse Down  not_there
+  
+Simulate Mouse Up
+  [Documentation]  FAIL ERROR: Element not_there not found
+  Simulate Mouse Up  test_element
+  Textfield Value Should Be  test_element  mouseup test_element
+  Textfield Value Should Be  secondary_element  ${EMPTY}
+  
+  Simulate Mouse Up  not_there
