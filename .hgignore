@@ -1,0 +1,9 @@
+syntax:glob
+.project
+.pydevproject
+test/results
+demo/reports
+*.pyc
+
+dist
+build
