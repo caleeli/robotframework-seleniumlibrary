@@ -1,0 +1,8 @@
+*Setting*
+Resource  resource.txt
+Suite Setup  Start Selenium Server
+Suite Teardown  Stop Selenium Server
+Force Tags  Regression
+
+*** Variables ***
+${FF PROFILE DIR}=  ${CURDIR}${/}..${/}resources${/}firefoxprofile
