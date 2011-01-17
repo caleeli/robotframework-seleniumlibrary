@@ -248,3 +248,25 @@ class Element(RunOnFailure):
             self._selenium.context_menu_at(locator, offset)
         else:
             self._selenium.context_menu(locator)
+
+    def element_should_be_enabled(self, locator):
+        """Verifies that element identified with `locator` is enabled.
+
+        Key attributes for arbitrary elements are `id` and `name`. See
+        `introduction` for details about locating elements.
+
+        This keyword was added in SeleniumLibrary 2.6.
+        """
+        if not self._selenium.is_editable(locator):
+            raise AssertionError("Element '%s' is disabled." % (locator))
+
+    def element_should_be_disabled(self, locator):
+        """Verifies that element identified with `locator` is disabled.
+
+        Key attributes for arbitrary elements are `id` and `name`. See
+        `introduction` for details about locating elements.
+
+        This keyword was added in SeleniumLibrary 2.6.
+        """
+        if self._selenium.is_editable(locator):
+            raise AssertionError("Element '%s' is enabled." % (locator))
