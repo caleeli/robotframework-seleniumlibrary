@@ -33,6 +33,11 @@
     }
   ]]>
   </mx:Script>
+  <mx:VBox id="staticContainer">
+    <mx:Label id="staticLabel" name="stLabel" text="Some static text" />
+    <mx:Label id="specialChars" text="special:, '= &quot; |! ()\{\}[]&lt;&gt; &amp;" />
+  </mx:VBox>
+  <mx:TextInput id="textInput" />
   <mx:HBox>
     <mx:Label text="opened with:" />
     <mx:Label id="openedWithLabel" text="" />

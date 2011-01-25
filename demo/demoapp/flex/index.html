@@ -1,7 +1,21 @@
 <html>
   <head>
-    <title>Login application for flex testing</title>
+    <title>Login Page</title>
+    <style type="text/css" />
+      body {
+          background: white;
+          text-align: center;
+      }
+      #container {
+          width: 30em;
+          height: 15em;
+          margin: 5em auto;
+          background: white;
+          border: 1px solid gray;
+      }
+    </style>
     <script type="text/javascript">
+      var testApp;
       function init() {
         var html = '';
         var movieName = 'LoginApp.swf';
@@ -10,17 +24,18 @@
                  'width="100%" height="100%" id="loginApp">' +
                  '<param name="movie" value="' + movieName + '">' +
                  '</object>';
-        } else {
+        }
+        else {
           html = '<embed id="loginApp" height="100%" width="100%"' +
-                 'src="' + movieName + '"' +
+                 'name="loginApp" src="' + movieName + '"' +
                  'type="application/x-shockwave-flash"/>';
         }
-        document.getElementById('appContainer').innerHTML = html;
+        document.getElementById('container').innerHTML = html;
       }
       window.onload = init;
     </script>
   </head>
 <body>
-  <div id="appContainer" style="width: 400px; height: 300px;" />
+  <div id="container" style="width: 400px; height: 300px;" />
 </body>
 </html>
