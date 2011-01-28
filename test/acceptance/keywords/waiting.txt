@@ -1,0 +1,18 @@
+*** Settings ***
+Test Setup      Go To Page "javascript/delayed_events.html"
+Resource        ../resource.txt
+
+*** Test Cases ***
+Wait For Condition
+    Title Should Be  Original
+    Wait For Condition  window.document.title == "Changed"
+    Run Keyword And Expect Error  Condition 'window.document.title == "Invalid"' did not become true in 100 milliseconds  Wait For Condition  window.document.title == "Invalid"  ${0.1}
+
+Wait Until Page Contains
+    Wait Until Page Contains  New Content  2 s
+    Run Keyword And Expect Error  Text 'invalid' did not appear in 100 milliseconds  Wait Until Page Contains  invalid  0.1
+
+Wait Until Page Contains Element
+    Wait Until Page Contains Element  new div  2 seconds
+    Run Keyword And Expect Error  Element 'non-existent' did not appear in 100 milliseconds  Wait Until Page Contains Element  non-existent  0.1 seconds
+
